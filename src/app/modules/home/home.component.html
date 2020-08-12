@@ -1,1 +1,16 @@
-<p>home works!</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Empresa</th>
+      <th scope="col">Nome</th>
+      <th scope="col">E-mail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users" (onClick)="goToUser(user.id)">
+      <td> {{ user.company.name }}</td>
+      <td> {{ user.name }}</td>
+      <td> {{ user.email }}</td>
+    </tr>
+  </tbody>
+</table>
