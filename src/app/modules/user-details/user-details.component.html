@@ -1,21 +1,21 @@
-<div class="card" style="width: 18rem;">
+<div class="d-flex flex-column align-items-center">
+  <div class="card col-12">
     <div class="card-body" *ngIf="user">
       <h5 class="card-title"> {{ user.name }} </h5>
-      <p class="card-text"> {{ user.username }} </p>
-      <p class="card-text"> {{ user.email }} </p>
-      <p class="card-text"> {{ user.phone }} </p>
+      <p class="card-text"> Usuário: {{ user.username }} </p>
+      <p class="card-text"> E-mail: {{ user.email }} </p>
+      <p class="card-text"> Telefone: {{ user.phone }} </p>
 
       <h5 class="card-title"> Endereço </h5>
-      <p class="card-text"> {{ user.address.street }} </p>
-      <p class="card-text"> {{ user.address.suite }} </p>
-      <p class="card-text"> {{ user.address.city }} </p>
-      <p class="card-text"> {{ user.address.zipcode }} </p>
+      <p class="card-text"> Rua: {{ user.address.street }} - Casa: {{ user.address.suite }}</p>
+      <p class="card-text"> Cidade: {{ user.address.city }} - Cep: {{ user.address.zipcode }}</p>
 
       <h5 class="card-title"> Trabalho </h5>
-      <p class="card-text"> {{ user.company.name }} </p>
-      <p class="card-text"> {{ user.company.catchPhrase }} </p>
+      <p class="card-text"> Empresa: {{ user.company.name }} </p>
+      <p class="card-text"> Frase: {{ user.company.catchPhrase }} </p>
       <p class="card-text"> {{ user.company.bs }} </p>
 
       <a href="#" class="btn btn-primary"> {{ user.website }} </a>
     </div>
   </div>
+</div>

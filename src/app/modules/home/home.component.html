@@ -1,16 +1,26 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Empresa</th>
-      <th scope="col">Nome</th>
-      <th scope="col">E-mail</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users" (click)="goToUser(user.id)">
-      <td> {{ user.company.name }}</td>
-      <td> {{ user.name }}</td>
-      <td> {{ user.email }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="d-flex flex-column align-itens-center">
+  <h1> Bem vindos ao Sistema da Prova</h1>
+
+  <div class="card" style="width: 70%">
+    <div class="card-body">
+      <h5 class="card-title"> Usuários do Sistema </h5>
+
+      <table class="table table-hover table-click">
+        <thead>
+          <tr>
+            <th scope="col">Empresa</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users" (click)="goToUser(user.id)">
+            <td> {{ user.company.name }}</td>
+            <td> {{ user.name }}</td>
+            <td> {{ user.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>s

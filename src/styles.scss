@@ -1,2 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+.table-click{
+  tbody {
+    tr {
+      cursor: pointer;
+    }
+  }
+}
+
+.container {
+  padding: 40px;
+}
+
+.align-itens-center {
+  align-items: center !important;
+}
