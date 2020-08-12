@@ -11,7 +11,7 @@ const routes: Routes = [
     data: { reuse: true }
   },
   {
-    path: '/:id',
+    path: ':id',
     component: UserDetailsComponent,
   },
   { path: '**', redirectTo: '/not-found' },

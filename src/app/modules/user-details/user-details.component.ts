@@ -22,7 +22,7 @@ export class UserDetailsComponent implements OnInit {
       const id = Number(params.get('id'));
 
       if (id && id > 0) {
-        this.userService.getUserById()
+        this.userService.getUsersById(id)
           .subscribe(user => {
             this.user = user;
           });

@@ -1,22 +1,21 @@
 <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"> {{ user.nome }} </h5>
-      
+    <div class="card-body" *ngIf="user">
+      <h5 class="card-title"> {{ user.name }} </h5>
       <p class="card-text"> {{ user.username }} </p>
       <p class="card-text"> {{ user.email }} </p>
       <p class="card-text"> {{ user.phone }} </p>
-      
+
       <h5 class="card-title"> Endereço </h5>
-      <p class="card-text"> {{ user.endereco.street }} </p>
-      <p class="card-text"> {{ user.endereco.suite }} </p>
-      <p class="card-text"> {{ user.endereco.city }} </p>
-      <p class="card-text"> {{ user.endereco.zipcode }} </p>
+      <p class="card-text"> {{ user.address.street }} </p>
+      <p class="card-text"> {{ user.address.suite }} </p>
+      <p class="card-text"> {{ user.address.city }} </p>
+      <p class="card-text"> {{ user.address.zipcode }} </p>
 
       <h5 class="card-title"> Trabalho </h5>
       <p class="card-text"> {{ user.company.name }} </p>
       <p class="card-text"> {{ user.company.catchPhrase }} </p>
       <p class="card-text"> {{ user.company.bs }} </p>
-      
-      <a href="#" class="btn btn-primary"> {{ user.website }]</a>
+
+      <a href="#" class="btn btn-primary"> {{ user.website }} </a>
     </div>
   </div>

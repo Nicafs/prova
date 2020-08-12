@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router
-    ) { }
+    ) {}
 
   ngOnInit() {
     this.userService.getUsers().subscribe(users => {
@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onClick(id: number) {
+  goToUser(id: number) {
+    console.log("Indo no usuario");
     this.router.navigate([id]);
   }
 }
