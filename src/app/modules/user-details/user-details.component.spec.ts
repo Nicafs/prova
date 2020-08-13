@@ -48,6 +48,7 @@ describe('UserDetailsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(UserDetailsComponent);
     component = fixture.componentInstance;
+    component.user = user;
     component.ngOnInit();
     fixture.detectChanges();
   });
