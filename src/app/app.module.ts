@@ -12,6 +12,8 @@ import { SharedModule } from './shared/shared.module';
 /* Modulos da Aplicação */
 import { CoreModule } from './core/core.module';
 
+import { AgmCoreModule } from '@agm/core';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './modules/home/home.component';
@@ -29,7 +31,10 @@ import { NotFoundComponent } from './modules/not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCabTb4HrS4lKgisCBjX3L_LIZCtOHODpI'
+    })
   ],
   providers: [{
       provide: RouteReuseStrategy,

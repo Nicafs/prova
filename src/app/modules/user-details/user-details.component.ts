@@ -12,6 +12,10 @@ import { User } from '@models';
 export class UserDetailsComponent implements OnInit {
   user: User;
 
+  lat: number;
+
+  lng: number;
+
   constructor(
     private userService: UserService,
     private route: ActivatedRoute
@@ -25,6 +29,8 @@ export class UserDetailsComponent implements OnInit {
         this.userService.getUsersById(id)
           .subscribe(user => {
             this.user = user;
+            this.lat = Number(user.address.geo.lat);
+            this.lng = Number(user.address.geo.lng);
           });
       }
     });

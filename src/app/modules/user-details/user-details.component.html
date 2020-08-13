@@ -10,6 +10,10 @@
       <p class="card-text"> Rua: {{ user.address.street }} - Casa: {{ user.address.suite }}</p>
       <p class="card-text"> Cidade: {{ user.address.city }} - Cep: {{ user.address.zipcode }}</p>
 
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+
       <h5 class="card-title"> Trabalho </h5>
       <p class="card-text"> Empresa: {{ user.company.name }} </p>
       <p class="card-text"> Frase: {{ user.company.catchPhrase }} </p>
