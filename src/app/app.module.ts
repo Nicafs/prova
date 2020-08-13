@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, RouteReuseStrategy } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { RouteReuseStrategy } from '@angular/router';
 
+import { AgmCoreModule } from '@agm/core';
 import { CustomRouteReuseStrategy } from './custom-route-reuse-strategy';
 
 /* Modulos de Estrutura */
@@ -11,8 +10,6 @@ import { SharedModule } from './shared/shared.module';
 
 /* Modulos da Aplicação */
 import { CoreModule } from './core/core.module';
-
-import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +22,7 @@ import { NotFoundComponent } from './modules/not-found/not-found.component';
     AppComponent,
     HomeComponent,
     UserDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,14 +30,15 @@ import { NotFoundComponent } from './modules/not-found/not-found.component';
     SharedModule,
     CoreModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCabTb4HrS4lKgisCBjX3L_LIZCtOHODpI'
-    })
+      apiKey: 'Insira sua Key aqui',
+    }),
   ],
-  providers: [{
+  providers: [
+    {
       provide: RouteReuseStrategy,
       useClass: CustomRouteReuseStrategy,
-    }
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

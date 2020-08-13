@@ -7,18 +7,15 @@ import { User } from '@models';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   users: User[] = [];
 
-  constructor(
-    private userService: UserService,
-    private router: Router
-    ) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(users => {
+    this.userService.getUsers().subscribe((users) => {
       this.users = users;
     });
   }

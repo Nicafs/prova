@@ -4,13 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-  ],
+  imports: [CommonModule, HttpClientModule],
   providers: [],
 })
-
 export class CoreModule {
   /* Tendo Certeza que o CoreModele só esta sendo importado pelo AppModule (apenas uma NGModule) */
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

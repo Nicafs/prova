@@ -7,7 +7,7 @@ import { User } from '@models';
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.scss']
+  styleUrls: ['./user-details.component.scss'],
 })
 export class UserDetailsComponent implements OnInit {
   user: User;
@@ -18,22 +18,20 @@ export class UserDetailsComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private route: ActivatedRoute
-    ) { }
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       const id = Number(params.get('id'));
 
       if (id && id > 0) {
-        this.userService.getUsersById(id)
-          .subscribe(user => {
-            this.user = user;
-            this.lat = Number(user.address.geo.lat);
-            this.lng = Number(user.address.geo.lng);
-          });
+        this.userService.getUsersById(id).subscribe((user) => {
+          this.user = user;
+          this.lat = Number(user.address.geo.lat);
+          this.lng = Number(user.address.geo.lng);
+        });
       }
     });
   }
-
 }
