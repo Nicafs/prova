@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
   }
 
   goToUser(id: number) {
-    console.log("Indo no usuario");
     this.router.navigate([id]);
   }
 }
