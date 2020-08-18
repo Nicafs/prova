@@ -1,14 +1,15 @@
-import { RouteReuseStrategy,
+import {
+  RouteReuseStrategy,
   ActivatedRouteSnapshot,
   DetachedRouteHandle,
   RouterModule,
   Routes,
-  UrlSegment
- } from '@angular/router';
+  UrlSegment,
+} from '@angular/router';
 
 export class CustomRouteReuseStrategy implements RouteReuseStrategy {
   private handlers: { [key: string]: DetachedRouteHandle } = {};
-  
+
   shouldDetach(route: ActivatedRouteSnapshot): boolean {
     if (!route.routeConfig || route.routeConfig.loadChildren) {
       return false;
@@ -17,7 +18,9 @@ export class CustomRouteReuseStrategy implements RouteReuseStrategy {
     let shouldReuse = false;
 
     if (route.routeConfig.data) {
-      route.routeConfig.data.reuse ? shouldReuse = true : shouldReuse = false;
+      route.routeConfig.data.reuse
+        ? (shouldReuse = true)
+        : (shouldReuse = false);
     }
 
     return shouldReuse;
@@ -36,12 +39,15 @@ export class CustomRouteReuseStrategy implements RouteReuseStrategy {
   retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
     if (!route.routeConfig || route.routeConfig.loadChildren) {
       return null;
-    };
+    }
 
     return this.handlers[this.getUrl(route)];
   }
 
-  shouldReuseRoute(future: ActivatedRouteSnapshot, current: ActivatedRouteSnapshot): boolean {
+  shouldReuseRoute(
+    future: ActivatedRouteSnapshot,
+    current: ActivatedRouteSnapshot,
+  ): boolean {
     let reUseUrl = false;
     if (future.routeConfig) {
       if (future.routeConfig.data) {
@@ -49,7 +55,7 @@ export class CustomRouteReuseStrategy implements RouteReuseStrategy {
       }
     }
 
-    const defaultReuse = (future.routeConfig === current.routeConfig);
+    const defaultReuse = future.routeConfig === current.routeConfig;
     return reUseUrl || defaultReuse;
   }
 
