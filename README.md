@@ -16,3 +16,4 @@ Para rodar o teste unitário da aplicação, rode o comando 'ng teste'
 
 O comandon `ng test` executa testes unitários via [Karma](https://karma-runner.github.io).
 
+Testes foram adicionados na nova branch, devido ter extrapolado o tempo pedido no dia.
